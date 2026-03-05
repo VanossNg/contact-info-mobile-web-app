@@ -1,5 +1,5 @@
 function initialize() {
-    var status = "* Offline *";
+    let status = "* Offline *";
     if (navigator.onLine) {
         status = "* Online *";
         retrieveContacts();
@@ -59,15 +59,12 @@ function displayContacts(contacts) {
 function addRow(contact) {
     var tcontent = document.getElementById("tcontent");
     var row = tcontent.insertRow();
-
     var nameCell = row.insertCell();
     nameCell.setAttribute('data-label', "Name");
     nameCell.innerHTML = contact.name;
-
     var addressCell = row.insertCell();
     addressCell.setAttribute('data-label', "Address");
     addressCell.innerHTML = contact.address;
-
     var mobileCell = row.insertCell();
     mobileCell.setAttribute('data-label', "Mobile");
     mobileCell.innerHTML = contact.phone.mobile;
